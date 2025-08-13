@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Libere seu Bônus</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: { DEFAULT: '#10b981', dark: '#059669' } },
+          dropShadow: { glow: ['0 10px 20px rgba(16,185,129,.45)'] },
+          animation: {
+            float: 'float 6s ease-in-out infinite',
+            shimmer: 'shimmer 1.75s linear infinite',
+          },
+          keyframes: {
+            float: { '0%,100%': { transform:'translateY(0px)' }, '50%': { transform:'translateY(-6px)' } },
+            shimmer: { '0%': { backgroundPosition:'-200% 0' }, '100%': { backgroundPosition:'200% 0' } }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- PIXEL META -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','2271982769983551');
+  </script>
+
+  <style>
+    .glass { backdrop-filter: blur(14px); background: linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.6)); border: 1px solid rgba(255,255,255,.5) }
+    .input { @apply w-full rounded-2xl bg-white/80 border border-slate-200 px-4 pl-12 py-3 text-slate-800 shadow-sm outline-none focus:border-brand focus:ring-2 focus:ring-brand/30; }
+    .input-wrap { @apply relative; }
+    .input-icon { @apply absolute left-4 top-1/2 -translate-y-1/2 text-slate-400; }
+    .btn {
+      @apply relative w-full rounded-2xl px-5 py-3.5 font-semibold text-white;
+      @apply bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700;
+      box-shadow: 0 12px 24px -8px rgba(16,185,129,.45);
+    }
+    .btn::before{
+      content:'';
+      position:absolute; inset:0; border-radius:1rem;
+      background: linear-gradient(120deg, rgba(255,255,255,.35), rgba(255,255,255,0) 40%, rgba(255,255,255,.35));
+      background-size: 200% 100%; animation: shimmer 2s linear infinite;
+      mix-blend: overlay; pointer-events:none;
+    }
+    .btn[disabled]{ @apply opacity-70 cursor-not-allowed; }
+  </style>
+</head>
+
+<body class="min-h-screen bg-[radial-gradient(1200px_600px_at_20%_-10%,rgba(16,185,129,.18),transparent),radial-gradient(800px_500px_at_80%_110%,rgba(16,185,129,.15),transparent)] bg-slate-50 text-slate-800">
+  <!-- Aura decorativa -->
+  <div class="pointer-events-none fixed inset-0 opacity-60">
+    <div class="absolute -top-40 -left-20 h-80 w-80 rounded-full bg-emerald-300 blur-3xl animate-float"></div>
+    <div class="absolute -bottom-40 -right-20 h-96 w-96 rounded-full bg-emerald-200 blur-3xl animate-float" style="animation-delay:1.2s"></div>
+  </div>
+
+  <main class="relative z-10 max-w-xl mx-auto px-5 py-12">
+    <div class="glass rounded-3xl p-7 md:p-9 shadow-2xl">
+      <!-- Cabeçalho enxuto -->
+      <div class="flex items-center gap-3 mb-6">
+        <div class="h-10 w-10 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 grid place-items-center text-white font-black drop-shadow-lg">VIP</div>
+        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">Liberar Bônus Exclusivo</h1>
+      </div>
+
+      <p class="text-slate-600 mb-6">Preencha seus dados para liberar o acesso ao Grupo VIP.</p>
+
+      <form id="bonusForm" class="space-y-4">
+        <div class="input-wrap">
+          <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 21a8 8 0 1 0-16 0" stroke="#94a3b8" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="8" r="4" stroke="#94a3b8" stroke-width="1.6"/></svg>
+          <input id="nome" type="text" required class="input" placeholder="Seu nome completo" autocomplete="name">
+        </div>
+
+        <div class="input-wrap">
+          <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 16.92V19a2 2 0 0 1-2.18 2A19.78 19.78 0 0 1 3 5.18 2 2 0 0 1 5 3h2.09a1 1 0 0 1 1 .75l.57 2.3a1 1 0 0 1-.29 1L7.16 8.09a16 16 0 0 0 8.75 8.75l1-1.21a1 1 0 0 1 1-.29l2.3.57a1 1 0 0 1 .79 1Z" stroke="#94a3b8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <input id="telefone" type="tel" inputmode="numeric" required class="input" placeholder="11999999999" autocomplete="tel">
+        </div>
+
+        <div class="input-wrap">
+          <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4zM4 7l8 6 8-6" stroke="#94a3b8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <input id="email" type="email" required class="input" placeholder="voce@email.com" autocomplete="email">
+        </div>
+
+        <button id="submitBtn" type="submit" class="btn">
+          <span class="relative z-10 flex items-center justify-center gap-2">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h18M7 8l-4 4 4 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            LIBERAR ACESSO
+          </span>
+        </button>
+
+        <p id="status" class="h-5 text-sm text-slate-500"></p>
+      </form>
+
+      <p class="mt-6 text-xs text-slate-400 text-center">© <span id="y"></span> Seu Projeto</p>
+    </div>
+  </main>
+
+  <!-- Lógica -->
+  <script>
+    // ========== CONFIG ==========
+    const GROUP_LINK  = "https://chat.whatsapp.com/KaoEMWM9fENFhwN0cNpxmg";
+    const VALUE_FIXED = Number("10"); // ex.: 97
+    const TEST_CODE   = new URLSearchParams(location.search).get('test') || "";
+    // ============================
+
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Gera event_id para deduplicação
+    function uuidv4() {
+      return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g,c=>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c/4).toString(16)
+      );
+    }
+
+    const form = document.getElementById('bonusForm');
+    const btn  = document.getElementById('submitBtn');
+    const statusEl = document.getElementById('status');
+    const telInput = document.getElementById('telefone');
+
+    // máscara leve (só números)
+    telInput.addEventListener('input', () => {
+      telInput.value = telInput.value.replace(/[^\d]/g,'').slice(0,13);
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name  = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('telefone').value.trim();
+
+      if (!name || !email || !phone) { statusEl.textContent = "Preencha todos os campos."; return; }
+
+      // Loading state agressivo do botão
+      btn.disabled = true;
+      btn.innerHTML = `<span class="relative z-10 flex items-center gap-2">
+        <svg class="h-5 w-5 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="12" cy="12" r="9" stroke-opacity=".25" stroke-width="4"></circle>
+          <path d="M21 12a9 9 0 0 1-9 9" stroke-width="4"></path>
+        </svg> Verificando...
+      </span>`;
+
+      const eventId = uuidv4();
+
+      // 1) Pixel (browser) com eventID
+      try { fbq('track','Purchase',{ currency:'BRL', value: VALUE_FIXED, eventID: eventId }); }
+      catch(e){ console.warn('Pixel falhou:', e); }
+
+      // 2) CAPI (server) com o MESMO event_id
+      try {
+        await fetch('/.netlify/functions/capi-purchase', {
+          method: 'POST',
+          headers: { 'Content-Type':'application/json' },
+          body: JSON.stringify({
+            name, email, phone,
+            value: VALUE_FIXED,
+            event_id: eventId,
+            test_event_code: TEST_CODE || undefined
+          })
+        });
+      } catch (err) { console.warn('CAPI falhou:', err); }
+
+      statusEl.textContent = "Acesso liberado! Redirecionando...";
+      setTimeout(()=> window.location.href = GROUP_LINK, 600);
+    });
+  </script>
+</body>
+</html>
